@@ -1,0 +1,16 @@
+<h3>Agregar</h3>
+<hr>
+
+<!--Evento ngSubmit evita hacer refresh al pulsar el boton
+           ngModel escucha y envia datos -->
+<form (ngSubmit)="agregar()">
+    <!-- 
+    <input type="text" placeholder="Nombre" [value]="nuevo.nombre">
+    <input type="number" placeholder="Poder" [value]="nuevo.poder">
+    -->
+    <input type="text" placeholder="Nombre" name="nombre" [(ngModel)]="nuevo.nombre">
+    <input type="number" placeholder="Poder" name="poder" [(ngModel)]="nuevo.poder">
+    <button type="submit">
+        Agregar
+    </button>
+</form>

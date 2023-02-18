@@ -1,0 +1,24 @@
+//<h1>Dragon Ball z</h1>
+<hr>
+
+<div class="row">
+    <div class="col">
+        <!--personajesPAPA es un arreglo de objetos que se encuentra en MainPageComponent
+            y la data que este contiene se guarda en personajeshijo y personajes (hijos) 
+                  
+            la data se muestra gracias a la configuracion app-personajes que funciona como un bloque
+            el cual contiene dos archivos un .html  y un .ts, con la logica para mostrar datos  en el front
+
+            el mismo principio aplica para el componente app-agregar (bloque)
+            el cual contiene dos archivos un .html  y un .ts, con la logica para ingresar datos en el front
+
+            como el MainPageComponent (padre) se configura dbz.module.ts
+            el MainPageComponent contiene dos archivos un main-page.component.html y un main-page.component.ts
+            todos los hijos que este tenga configurados se muestran y funcionan en el front 
+        -->
+        <app-personajes [personajeshijo]="personajesPAPA"></app-personajes>
+    </div>
+    <div class="col">
+        <app-agregar [personajes]="personajesPAPA" ></app-agregar>
+    </div>
+</div>

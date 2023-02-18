@@ -9,7 +9,7 @@ import { ListadoComponent } from './listado/listado.component';
         HeroeComponent,
         ListadoComponent
     ],
-    //compontes que deseo hacer publicos
+    //compontes que deseo hacer visibles
     exports:[
         HeroeComponent,
         ListadoComponent
