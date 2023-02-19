@@ -10,9 +10,16 @@ export class PersonajesComponent {
   /**
    * con el @Input() se le indica a angular 
    * que la data proviene de un componente externo (padre)
-   * la archivo .ts pasa la data al .html
+   * el archivo .ts pasa la data al .html
    * 
-   * la ubicaicon del template .html se indica en la parte superior
+   * Se recibe un array y su estructura, con o sin data
+   * 
+   * la ubicacion del template .html se indica en la parte superior
+   * 
+   * la variable tiene el mismo nombre en el html
+   * 
+   * el componente app-personajes, deberia llamarse mostrar personjes
+   * es la funcion que hace
    */
   @Input()
   personajeshijo: any [] = []

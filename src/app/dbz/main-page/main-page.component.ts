@@ -11,10 +11,11 @@ import { Persaonaje } from '../interfaces/dbz.interfaces';
 export class MainPageComponent {
   
   /*
-  arreglo de personajesPAPA
-  un arreglo que contiene varios objetos
-  el arerglo es de tipo  Persaonaje (objeto, plantilla interface)
-  para el ejempo tiene data, pero puede estar vacio
+  El arreglo de personajesPAPA  contiene la estructura padre 
+  la palantilla de la estructura se define en la interface Persaonaje
+  
+  Para el ejemplo se tiene un arreglo de objetos
+  Al dejar el array vacio el comportamiento del programa no cambia
   */
   personajesPAPA: Persaonaje [] = [
     {

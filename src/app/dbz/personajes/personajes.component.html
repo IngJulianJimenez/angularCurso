@@ -1,10 +1,11 @@
 <!--
     configuracion para mostrar la data en el front
     se recibe del padre y se hace el recorrido con un  *ngFor
+    si tiene data la muestra y si no la muestra vacio
 -->
 
 <h3>Personajes</h3>
 <hr>
 <ul>
-    <li *ngFor="let x of personajeshijo">{{x.nombre}}: {{x.poder | number}}</li>
+    <li *ngFor="let x of personajeshijo">{{x.nombre}} >> {{x.poder | number}}</li>
 </ul>
