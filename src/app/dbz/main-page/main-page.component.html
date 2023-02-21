@@ -4,13 +4,16 @@
 <div class="row">
     <div class="col">
         <!--personajesPAPA es un arreglo de objetos que se encuentra en MainPageComponent
-            y la data que este contiene se guarda en personajeshijo y personajes (hijos) 
+            y la data que este contiene se guarda en personajeshijo (hijos) 
                   
-            la data se muestra gracias a la configuracion app-personajes que funciona como un bloque
+            la data se muestra gracias a la configuracion app-personajes, que funciona como un bloque
             el cual contiene dos archivos un .html  y un .ts, con la logica para mostrar datos  en el front
 
-            el mismo principio aplica para el componente app-agregar (bloque)
+            se modifica el componente app-agregar (bloque)
             el cual contiene dos archivos un .html  y un .ts, con la logica para ingresar datos en el front
+            [nuevo]="nuevoPersonaje" captura los datos que estan en el formulario
+            (onNuevoPersonaje)="agregarNuevoPersonaje($event)" evento que transaporta los datos del formulario
+            cuando se hace click, luego en el main page component esta la logica de como la data nueva se añade al front
 
             como el MainPageComponent (padre) se configura dbz.module.ts
             el MainPageComponent contiene dos archivos un main-page.component.html y un main-page.component.ts
@@ -19,6 +22,6 @@
         <app-personajes [personajeshijo]="personajesPAPA"></app-personajes>
     </div>
     <div class="col">
-        <app-agregar [personajes]="personajesPAPA" ></app-agregar>
+        <app-agregar  (onNuevoPersonaje)="agregarNuevoPersonaje($event)" [nuevo]="nuevoPersonaje" ></app-agregar>
     </div>
 </div>

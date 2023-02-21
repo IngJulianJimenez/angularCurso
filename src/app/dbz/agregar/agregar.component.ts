@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Persaonaje } from '../interfaces/dbz.interfaces';
 
 @Component({
@@ -7,18 +7,6 @@ import { Persaonaje } from '../interfaces/dbz.interfaces';
   styleUrls: ['./agregar.component.css']
 })
 export class AgregarComponent {
-
-  /**
-   * se recibe un arreglo de objetos del padre
-   * realmente lo que se recibe es la estructura,
-   * puede estar vacio o con data
-   * se indica que es un arreglo de objetos (interface Persaonaje)
-   * 
-   * la variable tiene el mismo nombre en el html
-   */
-  @Input()
-  personajes: Persaonaje [] = [];
-
 
   /**
    * se declara una varaible nueva con valores por defecto vacios
@@ -30,14 +18,23 @@ export class AgregarComponent {
     poder: 0
   }
 
+  /**
+   * Emitir eventos @Output() 
+   * dentro de los simbolos especifico la estructura del elemento a enviar<>
+   * la estructura es la interface declarada para este ejercicio.
+   */
+
+    @Output()
+    onNuevoPersonaje: EventEmitter<Persaonaje> = new EventEmitter();
+
   /*
   agregar en un metodo que esta definido en el html
 
   con el if se evalua si hay un cmapo vacio o igual a 0, al pulsar el boton
   no realice ninguna accion
 
-  si hay data al pulsar el boton se guarda el contenido de 'nuevo' en la varible 'personajes'
-  'personajes' tiene conexion directa con el html (front)
+  si hay data al pulsar el boton se guarda el contenido de 'nuevo' en el evento 'onNuevoPersonaje'
+  'onNuevoPersonaje' tiene conexion directa con el html (front)
   al modificar esta variable o agregar valores se ve su cambio en el front
 
   por ultimo limpiar la data de la variable 'nuevo'
@@ -52,7 +49,7 @@ export class AgregarComponent {
     //console.log(this.nuevo);
     //console.log(this.personajes);
     
-    this.personajes.push(this.nuevo);
+    this.onNuevoPersonaje.emit(this.nuevo);
 
     this.nuevo = {
       nombre: '',
