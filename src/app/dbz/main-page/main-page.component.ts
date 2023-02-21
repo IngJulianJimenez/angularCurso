@@ -47,8 +47,9 @@ export class MainPageComponent {
   }
 
   agregarNuevoPersonaje(argumento: Persaonaje){
-    //console.log(argumento);
-    this.personajesPAPA.push(argumento)
+  //console.log(argumento);
+  //debugger;
+  this.personajesPAPA.push(argumento)
   }
 
 }

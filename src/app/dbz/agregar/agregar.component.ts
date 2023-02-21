@@ -25,6 +25,7 @@ export class AgregarComponent {
    */
 
     @Output()
+    //onNuevoPersonaje: EventEmitter<any> = new EventEmitter();
     onNuevoPersonaje: EventEmitter<Persaonaje> = new EventEmitter();
 
   /*
@@ -47,7 +48,7 @@ export class AgregarComponent {
     }
 
     //console.log(this.nuevo);
-    //console.log(this.personajes);
+    //console.log(this.onNuevoPersonaje);
     
     this.onNuevoPersonaje.emit(this.nuevo);
 
