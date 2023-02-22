@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Persaonaje } from '../interfaces/dbz.interfaces';
+import { DbzService } from '../services/dbz.services';
 
 
 @Component({
@@ -52,4 +53,8 @@ export class MainPageComponent {
   this.personajesPAPA.push(argumento)
   }
 
+  constructor(private dbzService: DbzService){
+
+  }
+//68
 }
