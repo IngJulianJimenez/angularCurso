@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { DbzService } from '../services/dbz.services';
 
 @Component({
   selector: 'app-personajes',
@@ -21,6 +22,23 @@ export class PersonajesComponent {
    * el componente app-personajes, deberia llamarse mostrar personjes
    * es la funcion que hace
    */
-  @Input()
-  personajeshijo: any [] = []
+  //@Input()  personajeshijo: any [] = []
+
+  /**
+   * se instancia el servicio
+   * variable >> leer_dbzService
+   * servicio >> DbzService
+   * 
+   * la variable debe cumplir con los parametros del servicio
+   */
+
+  constructor(private leer_dbzService: DbzService){}
+  
+  /**
+   * llamar al metodo get del servicio 
+   * y pintar la informacion en el html
+   */
+  get personajeshijo(){
+    return this.leer_dbzService.personajesServicio
+  }
 }

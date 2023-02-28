@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Persaonaje } from '../interfaces/dbz.interfaces';
+import { DbzService } from '../services/dbz.services';
 
 @Component({
   selector: 'app-agregar',
@@ -11,6 +12,8 @@ export class AgregarComponent {
   /**
    * se declara una varaible nueva con valores por defecto vacios
    * el @Input() es por que proviene data del archivo html que captura valores del formulario
+   * la variable es de tipo Persaonaje
+   * al definir el tipo de la variable se evita que ingresen valores extranios
    */  
   @Input()
   nuevo: Persaonaje = {
@@ -19,14 +22,14 @@ export class AgregarComponent {
   }
 
   /**
-   * Emitir eventos @Output() 
-   * dentro de los simbolos especifico la estructura del elemento a enviar<>
-   * la estructura es la interface declarada para este ejercicio.
+   * se instancia el servicio
+   * variable >> dbzService
+   * servicio >> DbzService
+   * 
+   * la variable debe cumplir con los parametros del servicio
    */
 
-    @Output()
-    //onNuevoPersonaje: EventEmitter<any> = new EventEmitter();
-    onNuevoPersonaje: EventEmitter<Persaonaje> = new EventEmitter();
+  constructor(private agregar_dbzService : DbzService){}
 
   /*
   agregar en un metodo que esta definido en el html
@@ -34,9 +37,8 @@ export class AgregarComponent {
   con el if se evalua si hay un cmapo vacio o igual a 0, al pulsar el boton
   no realice ninguna accion
 
-  si hay data al pulsar el boton se guarda el contenido de 'nuevo' en el evento 'onNuevoPersonaje'
-  'onNuevoPersonaje' tiene conexion directa con el html (front)
-  al modificar esta variable o agregar valores se ve su cambio en el front
+  si hay data al pulsar el boton se guarda el contenido en 'nuevo'
+  la data se agrega al servicio, en el metodo agregarPersonaje
 
   por ultimo limpiar la data de la variable 'nuevo'
 
@@ -48,9 +50,10 @@ export class AgregarComponent {
     }
 
     //console.log(this.nuevo);
-    //console.log(this.onNuevoPersonaje);
-    
-    this.onNuevoPersonaje.emit(this.nuevo);
+    //console.log(this.onNuevoPersonaje);    
+    //this.onNuevoPersonaje.emit(this.nuevo);
+
+    this.agregar_dbzService.agregarPersonaje(this.nuevo);
 
     this.nuevo = {
       nombre: '',

@@ -11,50 +11,16 @@ import { DbzService } from '../services/dbz.services';
 
 export class MainPageComponent {
 
-  /*
-  El arreglo de personajesPAPA  contiene la estructura padre 
-  la palantilla de la estructura se define en la interface Persaonaje
-  
-  Para el ejemplo se tiene un arreglo de objetos
-  Al dejar el array vacio el comportamiento del programa no cambia
-  */
-  personajesPAPA: Persaonaje[] = [
-    {
-      nombre: 'Krilin',
-      poder: 70
-    },
-    {
-      nombre: 'Goku',
-      poder: 1500
-    },
-    {
-      nombre: 'Vegeta',
-      poder: 8500
-    }
-  ]
-  
   /**
-   * Se crea una nueva variable con la estructura para agregar un nuevo personaje
-   * tambien usa la plantilla ya definida
-   * la variable se encarga de capturar lo que esta en el html
-   * 
-   * se crea un evento agregarNuevoPersonaje, encargado de agregar el nuevo personaje en el front
-   * lo que recibe lo envia a personajesPAPA
-   * 
+   * Se crea una nueva variable de tipo Persaonaje
+   * la variable se encarga de capturar lo que este en el formaualrio html al pulsar el boton
+   *
    */
   nuevoPersonaje: Persaonaje = {
     nombre: '',
     poder: 0
   }
 
-  agregarNuevoPersonaje(argumento: Persaonaje){
-  //console.log(argumento);
-  //debugger;
-  this.personajesPAPA.push(argumento)
-  }
+  //constructor(private dbzService: DbzService){}
 
-  constructor(private dbzService: DbzService){
-
-  }
-//68
 }

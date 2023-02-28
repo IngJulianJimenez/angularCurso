@@ -14,7 +14,7 @@ import { DbzService } from './services/dbz.services';
     PersonajesComponent,
     AgregarComponent
   ],
-  //compontes que se hacen visibles y se pueden consumir desde el app.component.html
+  //componentes que se hacen visibles y se pueden consumir desde el app.component.html
   exports:[
     MainPageComponent,
   ],
